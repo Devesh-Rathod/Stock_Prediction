@@ -40,7 +40,7 @@ plot_raw_data()
 
 #Forcasting
 df_train = data[['Date', 'Close']]
-df_train = df_train.rename(columns={'Date' : 'Dates' , 'Close' : 'Years'})
+df_train = df_train.rename(columns={'Date' : 'ds' , 'Close' : 'y'})
 model = Prophet()
 model.fit(df_train)
 future = model.make_future_dataframe(periods=per)
